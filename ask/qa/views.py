@@ -8,3 +8,6 @@ def test(request, *args, **kwargs):
 
 def not_found(request):
     return HttpResponseNotFound('Not Found')
+
+def found(request):
+    return HttpResponse('Found')
