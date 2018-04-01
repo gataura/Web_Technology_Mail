@@ -3,5 +3,5 @@ from django.urls import path, include
 from qa.views import test
 
 urlpatterns = {
-    path('<int:pk>', test),
+    path('<int:pk>/', test),
 }
