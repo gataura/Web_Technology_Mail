@@ -1,7 +1,7 @@
-from django.conf.urls import url
+from django.contrib import admin
+from django.urls import path, include
+from qa.views import test
 
-from ask.qa.views import test
-
-urlpatterns = [
-    url('(?<num>\d+)/', test),
-]
+urlpatterns = {
+    path('<int:pk>', test),
+}
