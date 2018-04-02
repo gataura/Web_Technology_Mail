@@ -27,4 +27,5 @@ urlpatterns = [
     path('question/', include('qa.urls')),
     path('', found),
     path('blablabla/', not_found),
+    path('<str:pk>/', not_found),
 ]
