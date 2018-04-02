@@ -26,5 +26,5 @@ urlpatterns = [
     path('new/', found),
     path('question/', include('qa.urls')),
     path('', found),
-    path('^', not_found),
+    path('/blablabla', not_found),
 ]
