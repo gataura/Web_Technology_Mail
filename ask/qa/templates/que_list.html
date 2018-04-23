@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ title }} questions</title>
+	{% block extrahead %}{% endblock %}
+</head>
+<body>
+	<h1>Вопросы и ответы</h1>
+	<h2>{{ title }} questions</h2>
+	{% for question in questions %}
+		<div class="question">
+			<a href="{{ question.build_url }}">{{ question }}</a>
+		</div>
+	{% endfor %}
+	{% if page.has_previous %}
+		<a href="?page={{ page.previous_page_number }}">←</a>
+	{% endif %}
+
+	{% for number in page.paginator.page_range %}
+		<b><a href="?page={{ number }}">{{ number }}</a></b>
+	{% endfor %}
+
+	{% if page.has_next %}
+		<a href="?page={{ page.next_page_number }}">→</a>
+	{% endif %}
+	<a href="?since={{ since }}">дальше</a>
+</body>
+</html>

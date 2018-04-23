@@ -17,16 +17,17 @@ from ask.views import found, not_found
 from django.contrib import admin
 from django.urls import path, include, re_path
 
+from qa.views import index, popular
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', found),
     path('signup/', found),
     path('ask/', found),
-    path('popular/', found),
+    path('popular/', popular),
     path('new/', found),
     path('question/', include('qa.urls')),
-    path('', found),
-    re_path(r'^', not_found),
+    path('', index),
+
 ]
 

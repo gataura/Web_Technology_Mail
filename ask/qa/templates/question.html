@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ question.title }} - questions</title>
+	{% block extrahead %}{% endblock %}
+</head>
+<body>
+	<h1>Вопросы и ответы</h1>
+	<h2>{{ question.title }}</h2>
+	<div>{{ question.text }}</div>
+	<ul>
+		{% for ans in answer %}
+			{% if ans.question_id == question.id %}
+				<li>{{ ans }}, by
+					{% for us in user %}
+						{% if us.id == ans.author_id %}
+							<span> {{ us.username }} </span>
+						{% endif %}
+					{% endfor %}
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+</body>
+</html>
